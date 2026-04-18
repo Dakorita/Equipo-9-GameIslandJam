@@ -1,3 +1,4 @@
+using SignalNoise.Game;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,11 +9,14 @@ public class VNManager : MonoBehaviour
     public VNUIManager uiManager;
     public VNCharacterDisplay[] displays;
     public VNVoiceManager voiceManager;
+    [SerializeField] GameStateManager gameStateManager;
+    bool waitingForEventInput = false;
 
     public InputActionReference nextLineAction;
 
     private Dictionary<VNCharacterSlot, VNCharacterDisplay> displayMap;
     private int currentLine = 0;
+    private bool isPaused = false;
 
     void Awake()
     {
@@ -49,12 +53,22 @@ public class VNManager : MonoBehaviour
 
     void HandleInput()
     {
+        if (isPaused) return;
+
+        if (waitingForEventInput)
+        {
+            waitingForEventInput = false;
+            isPaused = true;
+
+            TriggerEvent();
+            return;
+        }
+
         if (uiManager.IsRevealing)
         {
             uiManager.CompleteText();
             return;
         }
-
         NextLine();
     }
 
@@ -117,6 +131,25 @@ public class VNManager : MonoBehaviour
         }
 
         voiceManager.PlayVoice(line.voiceClip);
+        if (line.pauseForEvent)
+        {
+            waitingForEventInput = true;
+        }
+    }
+    void TriggerEvent()
+    {
+        uiManager.DeactivateUI();
+        Debug.Log("Ahora empieza el minijuego");
+        if (gameStateManager != null)
+        {   
+            gameStateManager.StartGame(gameStateManager.ActiveCharacter);
+        }
+    }
+    public void ResumeDialogue()
+    {
+        uiManager.ActivateUI();
+        isPaused = false;
+        NextLine();
     }
 
     void HideAllCharacters()
