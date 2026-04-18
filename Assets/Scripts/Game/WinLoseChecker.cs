@@ -107,7 +107,7 @@ namespace SignalNoise.Game
             stabilityTurnsRequired = turns;
         }
 
-        public void noiseWinThreshold(float stability)
+        public void CalculateNoiseWinThreshold(float stability)
         {
             noiseWinThreshold = stability;
         }
