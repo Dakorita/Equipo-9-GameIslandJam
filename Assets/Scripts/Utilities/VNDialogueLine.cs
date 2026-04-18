@@ -16,5 +16,8 @@ public class VNDialogueLine
     [Header("Voz 'opcional'")]
     public AudioClip voiceClip;
 
+    [Header("Evento Juego")]
+    public bool pauseForEvent;
+
     public List<int> visibleCharacters;
 }   

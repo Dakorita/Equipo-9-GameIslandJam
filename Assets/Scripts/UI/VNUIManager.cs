@@ -4,6 +4,7 @@ using System.Collections;
 
 public class VNUIManager : MonoBehaviour
 {
+    [SerializeField] GameObject Container;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
@@ -75,5 +76,13 @@ public class VNUIManager : MonoBehaviour
 
         dialogueText.maxVisibleCharacters = dialogueText.textInfo.characterCount;
         isRevealing = false;
+    }
+    public void DeactivateUI()
+    {
+        Container.SetActive(false);
+    }
+    public void ActivateUI()
+    {
+        Container.SetActive(true);
     }
 }
