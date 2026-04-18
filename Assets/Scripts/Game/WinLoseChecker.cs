@@ -102,14 +102,14 @@ namespace SignalNoise.Game
             consecutiveStableTurns = 0;
         }
 
-        public int CalculateStabilityTurns(int turns)
+        public void CalculateStabilityTurns(int turns)
         {
-            return (turns);
+            stabilityTurnsRequired = turns;
         }
 
-        public float CalculateNoiseWinThreshold(float stability)
+        public void CalculateNoiseWinThreshold(float stability)
         {
-            return stability;
+            noiseWinThreshold = stability;
         }
 
         public void CalculateEntropyLoseThreshold(float entropy)
