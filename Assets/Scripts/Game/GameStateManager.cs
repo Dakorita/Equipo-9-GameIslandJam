@@ -11,12 +11,14 @@ namespace SignalNoise.Game
         Won,
         Lost
     }
+    
 
     /// <summary>
     /// Singleton — manages the top-level game phase and exposes global state.
     /// </summary>
     public class GameStateManager : MonoBehaviour
     {
+        [SerializeField] VNManager vnManager;
         // ── Singleton ────────────────────────────────────────────────────────────
 
         public static GameStateManager Instance { get; private set; }
@@ -76,6 +78,10 @@ namespace SignalNoise.Game
             SetPhase(GamePhase.Won);
             OnGameWon?.Invoke(reason);
             Debug.Log($"[GameStateManager] WIN — {reason}");
+            if (vnManager != null)
+            {
+                vnManager.ResumeDialogue();
+            }
         }
 
         public void TriggerLoss(string reason)
