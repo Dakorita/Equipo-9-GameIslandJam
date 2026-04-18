@@ -25,13 +25,21 @@ public class AudioManager : MonoBehaviour
     }
     private void LoadSFXClips()
     {
-        sfxClips["Explosion"] = Resources.Load<AudioClip>("SFX/BigExplosion");
+        sfxClips["clickboton"] = Resources.Load<AudioClip>("SFX/clickboton");
+        sfxClips["ramplificar"] = Resources.Load<AudioClip>("SFX/ramplificar");
+        sfxClips["rbloqueo"] = Resources.Load<AudioClip>("SFX/rbloqueo");
+        sfxClips["rredirigir"] = Resources.Load<AudioClip>("SFX/rredirigir");
+        sfxClips["rreducir"] = Resources.Load<AudioClip>("SFX/rreducir");
+        sfxClips["vfem"] = Resources.Load<AudioClip>("SFX/vfem");
+        sfxClips["vmasc"] = Resources.Load<AudioClip>("SFX/vmasc");
+        sfxClips["vprota"] = Resources.Load<AudioClip>("SFX/vprota");
     }
 
     private void LoadMusicClips()
     {
         musicClips["Menu"] = Resources.Load<AudioClip>("Music/Menu");
         musicClips["Gameplay"] = Resources.Load<AudioClip>("Music/Gameplay");
+        musicClips["gameplay2"] = Resources.Load<AudioClip>("Music/gameplay2");
         musicClips["Exito"] = Resources.Load<AudioClip>("Music/Exito");
         musicClips["Fracaso"] = Resources.Load<AudioClip>("Music/Fracaso");
     }
@@ -42,7 +50,7 @@ public class AudioManager : MonoBehaviour
         {
             sfxSource.PlayOneShot(sfxClips[clipName]);
         }
-        else Debug.LogWarning("El AudioClip " + clipName + " no se encontró en el diccionario de sfxClips.");
+        else Debug.LogWarning("El AudioClip " + clipName + " no se encontrï¿½ en el diccionario de sfxClips.");
         
     }
     public void PlayMusic(string clipName)
@@ -53,7 +61,7 @@ public class AudioManager : MonoBehaviour
             musicSource.loop = true;
             musicSource.Play();
         }
-        else Debug.LogWarning("El AudioClip " + clipName + " no se encontró en el diccionario de musicClips.");
+        else Debug.LogWarning("El AudioClip " + clipName + " no se encontrï¿½ en el diccionario de musicClips.");
 
     }
 
@@ -67,7 +75,7 @@ public class AudioManager : MonoBehaviour
             }
             
         }
-        else Debug.LogWarning("El AudioClip " + clipName + " no se encontró en el diccionario de sfxClips.");
+        else Debug.LogWarning("El AudioClip " + clipName + " no se encontrï¿½ en el diccionario de sfxClips.");
         //AudioManager.instance.PlaySFXWithCooldown("Saved", );
     }
     private IEnumerator SFXCooldownCoroutine(float cooldownSeconds)
