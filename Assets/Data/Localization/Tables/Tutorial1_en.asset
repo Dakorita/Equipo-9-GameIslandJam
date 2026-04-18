@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Tutorial1_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 059d02e9c9e0f5e43ad38a843cf4ff3b, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 210025852928
+    m_Localized: Mr. M, this is mission control speaking, we need a radio check on
+      station four. over.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1250079027200
+    m_Localized: Reading you loud and clear. Stand by for confirmation. Over.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1399572410368
+    m_Localized: Roger that.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1546209472512
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1669429735424
+    m_Localized: All clear, connection you to station 24 now, stand by.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1797947404288
+    m_Localized: Copy that, opening two-way communications now.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2250307284992
+    m_Localized: Why hello there mister! Been a while since we've spoken huh? It's
+      time for your routine assessment! Im sure youre more than familiar with all
+      this now, but its procedure!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3304126164992
+    m_Localized: Nicely done, agent! Here comes another message for you!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3465904664576
+    m_Localized: See? I knew youd be a great asset to the team!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3631877468160
+    m_Localized: "Oh well\u2026 Maybe next time?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3762307739648
+    m_Localized: I think you should redo your training courses.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3828774875136
+    m_Localized: Hello? Are you still there? We cant seem to find your signal.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
