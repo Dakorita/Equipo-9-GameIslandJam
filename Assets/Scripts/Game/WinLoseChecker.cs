@@ -101,5 +101,14 @@ namespace SignalNoise.Game
         {
             consecutiveStableTurns = 0;
         }
+
+        public void InitializeValues()
+        {
+            stabilityTurnsRequired = stabilityTurnsRequired;//DIRTY: CalculateStabilityTurns();
+            noiseWinThreshold = noiseWinThreshold; //DIRTY: CalculateNoiseWinThreshold();
+            entropyLoseThreshold = entropyLoseThreshold; //DIRTY: CalculateEntropyLoseThreshold();
+            signalCollapsedThreshold = signalCollapsedThreshold; //DIRTY: CalculateSignalCollapsedThreshold();
+            gridManager = gridManager; //DIRTY: SetGridManager();
+        }
     }
 }

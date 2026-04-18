@@ -11,6 +11,7 @@ public class VNManager : MonoBehaviour
     public VNVoiceManager voiceManager;
     [SerializeField] GameStateManager gameStateManager;
     bool waitingForEventInput = false;
+    [SerializeField] GameObject gridRenderer;
 
     public InputActionReference nextLineAction;
 
@@ -74,6 +75,7 @@ public class VNManager : MonoBehaviour
 
     void Start()
     {
+        gridRenderer.SetActive(false);
         ShowLine();
     }
 
@@ -140,6 +142,10 @@ public class VNManager : MonoBehaviour
     {
         uiManager.DeactivateUI();
         Debug.Log("Ahora empieza el minijuego");
+        if (gridRenderer != null)
+        {
+            gridRenderer.SetActive(true);
+        }
         if (gameStateManager != null)
         {   
             gameStateManager.StartGame(gameStateManager.ActiveCharacter);
@@ -147,6 +153,7 @@ public class VNManager : MonoBehaviour
     }
     public void ResumeDialogue()
     {
+        gridRenderer.SetActive(false);
         uiManager.ActivateUI();
         isPaused = false;
         NextLine();
