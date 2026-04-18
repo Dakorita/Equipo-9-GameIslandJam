@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b4dbf1091b29e0547bd86c0e933b76d3
+guid: 70f1dc36b07a7c4488b2811adaf96c90
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Efecto amplificaci\xF3n_0"
+      name: Mesa de trabajo 2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2000
-        width: 2000
-        height: 2000
+        x: 850
+        y: 789
+        width: 227
+        height: 226
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,20 +112,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80c5bb5ebf291c04c831157374c8ac55
-      internalID: -915451656
+      spriteID: baeb2c913fe874a40b90494cbec13670
+      internalID: -1873437689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Efecto amplificaci\xF3n_1"
+      name: Mesa de trabajo 2_1
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 2000
-        width: 2000
-        height: 2000
+        x: 1126
+        y: 789
+        width: 227
+        height: 226
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b924203933204c048bf2aa2916134b37
-      internalID: -1535033707
+      spriteID: 6e2ab8c80ac235247b7118f1b74afb78
+      internalID: 806014454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Efecto amplificaci\xF3n_2"
+      name: Mesa de trabajo 2_2
       rect:
         serializedVersion: 2
-        x: 4000
-        y: 2000
-        width: 2000
-        height: 2000
+        x: 1401
+        y: 789
+        width: 227
+        height: 226
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fa9a1c42c36e3f42b91ab805bace266
-      internalID: 1050009127
+      spriteID: 5c50dd60e89bca4438f0405a49d54c51
+      internalID: 1837933396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Efecto amplificaci\xF3n_3"
+      name: Mesa de trabajo 2_3
       rect:
         serializedVersion: 2
-        x: 6000
-        y: 2000
-        width: 2000
-        height: 2000
+        x: 1677
+        y: 789
+        width: 227
+        height: 226
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,20 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 100586b858f7abb448034d7fb260e79c
-      internalID: -576073257
+      spriteID: 0b179f59f2be1e2449e58d2f8008b782
+      internalID: -1742195949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Efecto amplificaci\xF3n_4"
+      name: Mesa de trabajo 2_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2000
-        height: 2000
+        x: 1144
+        y: 534
+        width: 705
+        height: 227
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a589cb5bf5d6f1049b5edb079e8e0c3c
-      internalID: -1214409991
+      spriteID: 653fe20837c53b5489ede43b904b1aa1
+      internalID: 212560020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Efecto amplificaci\xF3n_5"
+      name: Mesa de trabajo 2_7
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 0
-        width: 2000
-        height: 2000
+        x: 1553
+        y: 116
+        width: 226
+        height: 357
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,20 +222,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87a9e862b49676542964e9ec6ee16f39
-      internalID: 2103143047
+      spriteID: 5280219aa20b89b4fb2b5c4d392edd0b
+      internalID: 2144737699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Efecto amplificaci\xF3n_6"
+      name: Mesa de trabajo 2_8
       rect:
         serializedVersion: 2
-        x: 4000
-        y: 0
-        width: 2000
-        height: 2000
+        x: 1052
+        y: 33
+        width: 271
+        height: 453
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,8 +244,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba9dc9dba957a15419fc8e56fcdf46c2
-      internalID: -1541139345
+      spriteID: 27fc508d6ac812b4fa4c75584d108ea2
+      internalID: 1228164323
       vertices: []
       indices: 
       edges: []
@@ -254,7 +254,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 80081df347c8cc14e824c7a16d75009c
+    spriteID: c24efb22477564846ae5c28b2b2990e6
     internalID: 0
     vertices: []
     indices: 
@@ -264,15 +264,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":2.0},"gridSpriteSize":{"x":2000.0,"y":2000.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      "Efecto amplificaci\xF3n_0": -915451656
-      "Efecto amplificaci\xF3n_1": -1535033707
-      "Efecto amplificaci\xF3n_2": 1050009127
-      "Efecto amplificaci\xF3n_3": -576073257
-      "Efecto amplificaci\xF3n_4": -1214409991
-      "Efecto amplificaci\xF3n_5": 2103143047
-      "Efecto amplificaci\xF3n_6": -1541139345
+      Mesa de trabajo 2_0: -1873437689
+      Mesa de trabajo 2_1: 806014454
+      Mesa de trabajo 2_2: 1837933396
+      Mesa de trabajo 2_3: -1742195949
+      Mesa de trabajo 2_4: 212560020
+      Mesa de trabajo 2_5: -1084409155
+      Mesa de trabajo 2_6: -515588501
+      Mesa de trabajo 2_7: 2144737699
+      Mesa de trabajo 2_8: 1228164323
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
