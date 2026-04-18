@@ -29,10 +29,13 @@ namespace SignalNoise.Entities
 
         /// <summary>
         /// NoiseCluster spreads noise to adjacent cells.
-        /// If a neighbor's noiseLevel exceeds 0.8 and it is a SignalNode it converts to a NoiseCluster.
-        /// <paramref name="spreadMultiplier"/> is provided by CharacterData (AMPLIFIER can raise it).
+        /// If a neighbor's noiseLevel exceeds the conversion threshold it converts to a NoiseCluster:
+        ///   - SignalNode → NoiseCluster (loses 0.2 stability)
+        ///   - Empty cell → NoiseCluster (fully corrupted)
+        /// <paramref name="spreadMultiplier"/> is provided by GridManager (affected by CharacterData).
+        /// <paramref name="emptyConversionThreshold"/> is configured on GridManager.
         /// </summary>
-        public static void EvolveNoiseCluster(CellData cell, CellData[] neighbors, float spreadMultiplier)
+        public static void EvolveNoiseCluster(CellData cell, CellData[] neighbors, float spreadMultiplier, float emptyConversionThreshold = 0.8f)
         {
             if (cell.isStatic) return;
 
@@ -46,6 +49,10 @@ namespace SignalNoise.Entities
                 {
                     neighbor.entityType = EntityType.NoiseCluster;
                     neighbor.stability  = Mathf.Clamp01(neighbor.stability - 0.2f);
+                }
+                else if (neighbor.noiseLevel >= emptyConversionThreshold && neighbor.entityType == EntityType.Empty)
+                {
+                    neighbor.entityType = EntityType.NoiseCluster;
                 }
             }
         }

@@ -1378,6 +1378,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1658810895}
     - target: {fileID: 7839136983801764103, guid: 67d2b1c06b4cc79b2997d71a9bcf38a7, type: 3}
+      propertyPath: actionsPerTurn
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839136983801764103, guid: 67d2b1c06b4cc79b2997d71a9bcf38a7, type: 3}
       propertyPath: winLoseChecker
       value: 
       objectReference: {fileID: 101067934}
@@ -1819,11 +1823,19 @@ PrefabInstance:
       objectReference: {fileID: 1658810895}
     - target: {fileID: 622407141269734673, guid: 763b0ce64a44f2f12a98b27fe578dd10, type: 3}
       propertyPath: noiseWinThreshold
-      value: 0
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 622407141269734673, guid: 763b0ce64a44f2f12a98b27fe578dd10, type: 3}
+      propertyPath: entropyLoseThreshold
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 622407141269734673, guid: 763b0ce64a44f2f12a98b27fe578dd10, type: 3}
+      propertyPath: stabilityTurnsRequired
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 622407141269734673, guid: 763b0ce64a44f2f12a98b27fe578dd10, type: 3}
       propertyPath: signalCollapsedThreshold
-      value: 0
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 690799681713459635, guid: 763b0ce64a44f2f12a98b27fe578dd10, type: 3}
       propertyPath: m_Name
@@ -2064,6 +2076,10 @@ PrefabInstance:
       propertyPath: characterData
       value: 
       objectReference: {fileID: 11400000, guid: a8f308a168e1a0e119d5c96fe3527bdc, type: 2}
+    - target: {fileID: 8188767984687051262, guid: d429e8864a04addb0bd9daa75f88ac32, type: 3}
+      propertyPath: redirectBaseRadius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

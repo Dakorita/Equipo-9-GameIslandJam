@@ -17,8 +17,13 @@ namespace SignalNoise.Grid
         [SerializeField] private int width  = 8;
         [SerializeField] private int height = 8;
 
-        [Header("Initial Noise Multiplier")]
+        [Header("Noise Settings")]
         [SerializeField] private float defaultNoiseSpreadMultiplier = 1f;
+
+        [Tooltip("Noise level an empty cell must reach before converting into a NoiseCluster.")]
+        [SerializeField] [Range(0f, 1f)] private float emptyConversionThreshold = 0.8f;
+
+        public float EmptyConversionThreshold => emptyConversionThreshold;
 
         // ── Public accessor ─────────────────────────────────────────────────────
 
@@ -199,7 +204,7 @@ namespace SignalNoise.Grid
                             break;
 
                         case EntityType.NoiseCluster:
-                            EntityBehavior.EvolveNoiseCluster(workingCopy[x, y], neighbors, defaultNoiseSpreadMultiplier);
+                            EntityBehavior.EvolveNoiseCluster(workingCopy[x, y], neighbors, defaultNoiseSpreadMultiplier, emptyConversionThreshold);
                             break;
 
                         case EntityType.EchoFragment:

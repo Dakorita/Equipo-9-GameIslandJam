@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using SignalNoise.Characters;
 using SignalNoise.Entities;
@@ -7,28 +8,20 @@ using SignalNoise.Player;
 namespace SignalNoise.Game
 {
     /// <summary>
-    /// Minimal test harness — populates the grid and starts the game.
-    /// Attach to any GameObject in the scene.
+    /// Populates the grid and starts the game.
+    /// Assign a LevelConfig asset to control entity placement (manual or procedural).
     /// Keyboard: 1/2/3/4 = select action, Space = confirm turn.
     /// </summary>
     public class GameBootstrap : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] private GridManager    gridManager;
+        [SerializeField] private GridManager     gridManager;
         [SerializeField] private PlayerController playerController;
-        [SerializeField] private CharacterData  characterData;
+        [SerializeField] private CharacterData   characterData;
 
-        // ── Initial layout (8x8) ─────────────────────────────────────────────────
-        // S = SignalNode, N = NoiseCluster, E = EchoFragment
-        //
-        //  . . . . . . . .
-        //  . S . . . . S .
-        //  . . N . . N . .
-        //  . . . E . . . .
-        //  . . . . . . . .
-        //  . . N . . . . .
-        //  . S . . . . S .
-        //  . . . . . . . .
+        [Header("Level Configuration")]
+        [Tooltip("Defines which entities are placed on the grid. Leave empty to use the built-in fallback layout.")]
+        [SerializeField] private LevelConfig levelConfig;
 
         private void Start()
         {
@@ -71,20 +64,98 @@ namespace SignalNoise.Game
                 "Keys: [1] Filter  [2] Amplify  [3] Isolate  [4] Redirect  [Space] End Turn", style);
         }
 
+        // ── Placement ────────────────────────────────────────────────────────────
+
         private void PlaceInitialEntities()
         {
-            // SignalNodes
+            if (levelConfig == null)
+            {
+                PlaceFallbackLayout();
+                return;
+            }
+
+            if (levelConfig.useProceduralGeneration)
+                PlaceEntitiesProcedurally();
+            else
+                PlaceEntitiesManually();
+        }
+
+        /// <summary>Places entities at the exact positions defined in LevelConfig.manualPlacements.</summary>
+        private void PlaceEntitiesManually()
+        {
+            foreach (var entry in levelConfig.manualPlacements)
+            {
+                if (!gridManager.IsInBounds(entry.position))
+                {
+                    Debug.LogWarning($"[GameBootstrap] Manual placement at {entry.position} is out of bounds — skipped.");
+                    continue;
+                }
+                gridManager.SetEntityAt(entry.position, entry.type);
+            }
+        }
+
+        /// <summary>Randomly places entities on empty cells using the counts in LevelConfig.</summary>
+        private void PlaceEntitiesProcedurally()
+        {
+            if (levelConfig.seed != 0)
+                Random.InitState(levelConfig.seed);
+
+            List<Vector2Int> available = CollectEmptyCells();
+
+            SpawnRandom(EntityType.SignalNode,    levelConfig.signalCount, available);
+            SpawnRandom(EntityType.NoiseCluster,  levelConfig.noiseCount,  available);
+            SpawnRandom(EntityType.EchoFragment,  levelConfig.echoCount,   available);
+        }
+
+        private void SpawnRandom(EntityType type, int count, List<Vector2Int> available)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                if (available.Count == 0)
+                {
+                    Debug.LogWarning($"[GameBootstrap] No empty cells left to place {type}.");
+                    return;
+                }
+                int index = Random.Range(0, available.Count);
+                gridManager.SetEntityAt(available[index], type);
+                available.RemoveAt(index);
+            }
+        }
+
+        private List<Vector2Int> CollectEmptyCells()
+        {
+            var result = new List<Vector2Int>();
+            for (int x = 0; x < gridManager.Width; x++)
+                for (int y = 0; y < gridManager.Height; y++)
+                {
+                    var cell = gridManager.GetCell(x, y);
+                    if (cell != null && cell.entityType == EntityType.Empty)
+                        result.Add(new Vector2Int(x, y));
+                }
+            return result;
+        }
+
+        /// <summary>Hardcoded fallback layout used when no LevelConfig is assigned.</summary>
+        private void PlaceFallbackLayout()
+        {
+            // S = SignalNode, N = NoiseCluster, E = EchoFragment
+            //  . . . . . . . .
+            //  . S . . . . S .
+            //  . . N . . N . .
+            //  . . . E . . . .
+            //  . . . . . . . .
+            //  . . N . . . . .
+            //  . S . . . . S .
+            //  . . . . . . . .
             gridManager.SetEntityAt(new Vector2Int(1, 1), EntityType.SignalNode);
             gridManager.SetEntityAt(new Vector2Int(6, 1), EntityType.SignalNode);
             gridManager.SetEntityAt(new Vector2Int(1, 6), EntityType.SignalNode);
             gridManager.SetEntityAt(new Vector2Int(6, 6), EntityType.SignalNode);
 
-            // NoiseClusters
             gridManager.SetEntityAt(new Vector2Int(2, 2), EntityType.NoiseCluster);
             gridManager.SetEntityAt(new Vector2Int(5, 2), EntityType.NoiseCluster);
             gridManager.SetEntityAt(new Vector2Int(2, 5), EntityType.NoiseCluster);
 
-            // EchoFragment
             gridManager.SetEntityAt(new Vector2Int(3, 3), EntityType.EchoFragment);
         }
     }
