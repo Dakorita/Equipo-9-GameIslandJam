@@ -93,6 +93,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -100,10 +126,10 @@ TextureImporter:
       name: english
       rect:
         serializedVersion: 2
-        x: 170
-        y: 215
-        width: 621
-        height: 634
+        x: 0
+        y: 0
+        width: 960
+        height: 1080
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +138,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 300703b7690d37249844e2e479cee23e
-      internalID: -942084218
+      spriteID: 33c462904e7dca348976fd86a531472b
+      internalID: -399650087
       vertices: []
       indices: 
       edges: []
@@ -122,20 +148,20 @@ TextureImporter:
       name: spanish
       rect:
         serializedVersion: 2
-        x: 1124
-        y: 205
-        width: 624
-        height: 648
+        x: 960
+        y: 0
+        width: 960
+        height: 1080
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 10, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40273402b0db619469f0049ef0a2fa64
-      internalID: 1446100934
+      spriteID: cf2120e698ea35d4a90803a076c73164
+      internalID: -1226075848
       vertices: []
       indices: 
       edges: []
@@ -156,8 +182,8 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":960.0,"y":1080.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      english: -942084218
-      spanish: 1446100934
+      english: -399650087
+      spanish: -1226075848
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

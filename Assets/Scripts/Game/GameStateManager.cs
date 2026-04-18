@@ -47,7 +47,7 @@ namespace SignalNoise.Game
 
         [Header("References")]
         [SerializeField] private TurnManager turnManager;
-
+    
         // ── Public API ───────────────────────────────────────────────────────────
 
         /// <summary>

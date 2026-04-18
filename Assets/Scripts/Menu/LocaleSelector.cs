@@ -10,6 +10,7 @@ public class LocaleSelector : MonoBehaviour
     private bool active = false;
     public bool isSpanish = true;
     public int localeID = 1;
+    [SerializeField] SpriteController spriteController;
     public void ChangeLocale()
     {
 
@@ -25,6 +26,7 @@ public class LocaleSelector : MonoBehaviour
             isSpanish = true;
             Debug.Log("elseif");
         }
+        spriteController.ChangeBool();
         StartCoroutine(SetLocale(localeID));
     }
     IEnumerator SetLocale(int _localeID)
