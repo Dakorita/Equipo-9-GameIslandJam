@@ -102,13 +102,33 @@ namespace SignalNoise.Game
             consecutiveStableTurns = 0;
         }
 
+        public void CalculateStabilityTurns(int turns)
+        {
+            stabilityTurnsRequired = turns;
+        }
+
+        public void noiseWinThreshold(float stability)
+        {
+            noiseWinThreshold = stability;
+        }
+
+        public void CalculateEntropyLoseThreshold(float entropy)
+        {
+            entropyLoseThreshold = entropy;
+        }
+
+        public void CalculateSignalCollapsedThreshold(float signal)
+        {
+            signalCollapsedThreshold = signal;
+        }
         public void InitializeValues()
         {
-            stabilityTurnsRequired = stabilityTurnsRequired;//DIRTY: CalculateStabilityTurns();
-            noiseWinThreshold = noiseWinThreshold; //DIRTY: CalculateNoiseWinThreshold();
-            entropyLoseThreshold = entropyLoseThreshold; //DIRTY: CalculateEntropyLoseThreshold();
-            signalCollapsedThreshold = signalCollapsedThreshold; //DIRTY: CalculateSignalCollapsedThreshold();
-            gridManager = gridManager; //DIRTY: SetGridManager();
+            CalculateStabilityTurns(5);
+            CalculateNoiseWinThreshold(0.2f);
+            CalculateEntropyLoseThreshold(0.85f);
+            CalculateSignalCollapsedThreshold(0.05f);
         }
+
+        //TODO: CalculateStabilityTurns(),noiseWinThreshold(),CalculateEntropyLoseThreshold(),CalculateSignalCollapsedThreshold()
     }
 }
