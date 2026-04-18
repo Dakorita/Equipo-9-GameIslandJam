@@ -160,7 +160,14 @@ namespace SignalNoise.Grid
             if (!Input.GetMouseButtonDown(0)) return;
             if (mainCamera == null) return;
 
-            Vector3 worldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            // For orthographic cameras z=0 works fine; for perspective cameras we need
+            // the distance from the camera to the grid plane (z=0 in world space).
+            float distToGrid = mainCamera.orthographic
+                ? 0f
+                : Mathf.Abs(mainCamera.transform.position.z - cellDepth);
+
+            Vector3 screenPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distToGrid);
+            Vector3 worldPos  = mainCamera.ScreenToWorldPoint(screenPos);
             worldPos.z = 0f;
 
             Vector2Int? hit = WorldToCell(worldPos);
