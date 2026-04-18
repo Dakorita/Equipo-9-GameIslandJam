@@ -6,8 +6,11 @@ using SignalNoise.Entities;
 namespace SignalNoise.Grid
 {
     /// <summary>
-    /// Renders the logical grid as a flat grid of colored sprites.
-    /// No external assets required — uses Unity's built-in white sprite tinted per entity type.
+    /// Renders the logical grid as a flat grid of sprites.
+    /// Each cell has two layers:
+    ///   - Background: colored block tinted by noise/stability (always visible)
+    ///   - Entity:     sprite asset assigned per entity type (shown on top when assigned)
+    /// If no sprite is assigned for an entity type the cell falls back to the tinted color block.
     /// </summary>
     public class GridRenderer : MonoBehaviour
     {
@@ -21,11 +24,29 @@ namespace SignalNoise.Grid
         [SerializeField] private GridManager gridManager;
 
         [Header("Cell Visuals")]
-        [SerializeField] private float cellSize      = 1f;
-        [SerializeField] private float cellGap       = 0.05f;
-        [SerializeField] private float cellDepth     = 0f;
+        [SerializeField] private float cellSize  = 1f;
+        [SerializeField] private float cellGap   = 0.05f;
+        [SerializeField] private float cellDepth = 0f;
 
-        [Header("Colors")]
+        [Header("Entity Sprites")]
+        [Tooltip("Sprite for empty/background cells. Leave null for a plain colored block.")]
+        [SerializeField] private Sprite spriteEmpty        = null;
+        [SerializeField] private Sprite spriteSignalNode   = null;
+        [SerializeField] private Sprite spriteNoiseCluster = null;
+        [SerializeField] private Sprite spriteEchoFragment = null;
+        [SerializeField] private Sprite spriteWatcher      = null;
+        [SerializeField] private Sprite spriteDrift        = null;
+
+        [Header("Entity Animators")]
+        [Tooltip("AnimatorController per entity type. Leave null to use the static sprite instead.")]
+        [SerializeField] private RuntimeAnimatorController animSignalNode   = null;
+        [SerializeField] private RuntimeAnimatorController animNoiseCluster = null;
+        [SerializeField] private RuntimeAnimatorController animEchoFragment = null;
+        [SerializeField] private RuntimeAnimatorController animWatcher      = null;
+        [SerializeField] private RuntimeAnimatorController animDrift        = null;
+
+        [Header("Background Colors")]
+        [Tooltip("Tint used for the background layer when no entity sprite is assigned, or as backdrop when one is.")]
         [SerializeField] private Color colorEmpty         = new Color(0.15f, 0.15f, 0.15f);
         [SerializeField] private Color colorSignalNode    = new Color(0.2f,  0.5f,  1.0f);
         [SerializeField] private Color colorNoiseCluster  = new Color(1.0f,  0.2f,  0.2f);
@@ -37,10 +58,14 @@ namespace SignalNoise.Grid
 
         // ── Private state ───────────────────────────────────────────────────────
 
-        private GameObject[,] cellObjects;
-        private SpriteRenderer[,] cellRenderers;
+        private SpriteRenderer[,] bgRenderers;     // background / tint layer
+        private SpriteRenderer[,] entityRenderers; // entity sprite layer (on top)
+        private Animator[,]       entityAnimators; // animator per entity cell (may be null)
         private Vector2Int selectedCell = new Vector2Int(-1, -1);
         private Camera mainCamera;
+
+        // Cached 1x1 white sprite used as default block when no sprite is assigned
+        private Sprite defaultBlockSprite;
 
         // ── Lifecycle ───────────────────────────────────────────────────────────
 
@@ -63,6 +88,7 @@ namespace SignalNoise.Grid
                 return;
             }
 
+            defaultBlockSprite = MakeWhiteSprite();
             BuildGrid();
             RefreshVisuals();
         }
@@ -79,12 +105,11 @@ namespace SignalNoise.Grid
             int w = gridManager.Width;
             int h = gridManager.Height;
 
-            cellObjects   = new GameObject[w, h];
-            cellRenderers = new SpriteRenderer[w, h];
+            bgRenderers     = new SpriteRenderer[w, h];
+            entityRenderers = new SpriteRenderer[w, h];
+            entityAnimators = new Animator[w, h];
 
-            float step = cellSize + cellGap;
-
-            // Centre the grid on this transform
+            float step    = cellSize + cellGap;
             float offsetX = -(w - 1) * step * 0.5f;
             float offsetY = -(h - 1) * step * 0.5f;
 
@@ -92,24 +117,43 @@ namespace SignalNoise.Grid
             {
                 for (int y = 0; y < h; y++)
                 {
-                    GameObject cell = new GameObject($"Cell_{x}_{y}");
-                    cell.transform.SetParent(transform, false);
-                    cell.transform.localPosition = new Vector3(
+                    Vector3 localPos = new Vector3(
                         offsetX + x * step,
                         offsetY + y * step,
                         cellDepth
                     );
 
-                    SpriteRenderer sr = cell.AddComponent<SpriteRenderer>();
-                    sr.sprite = GetDefaultSprite();
-                    sr.color  = colorEmpty;
+                    // ── Background layer ────────────────────────────────────────
+                    GameObject bgObj = new GameObject($"Cell_{x}_{y}_BG");
+                    bgObj.transform.SetParent(transform, false);
+                    bgObj.transform.localPosition = localPos;
+                    bgObj.transform.localScale    = Vector3.one * cellSize;
 
-                    // Scale to match desired cell size
-                    // Unity's default sprite is 100 px/unit, so local scale = cellSize
-                    cell.transform.localScale = Vector3.one * cellSize;
+                    SpriteRenderer bgSR = bgObj.AddComponent<SpriteRenderer>();
+                    bgSR.sprite         = spriteEmpty != null ? spriteEmpty : defaultBlockSprite;
+                    bgSR.color          = colorEmpty;
+                    bgSR.sortingOrder   = 0;
 
-                    cellObjects[x, y]   = cell;
-                    cellRenderers[x, y] = sr;
+                    bgRenderers[x, y] = bgSR;
+
+                    // ── Entity layer (on top) ────────────────────────────────────
+                    GameObject entityObj = new GameObject($"Cell_{x}_{y}_Entity");
+                    entityObj.transform.SetParent(transform, false);
+                    entityObj.transform.localPosition = new Vector3(localPos.x, localPos.y, localPos.z - 0.01f);
+                    entityObj.transform.localScale    = Vector3.one * cellSize;
+
+                    SpriteRenderer entitySR = entityObj.AddComponent<SpriteRenderer>();
+                    entitySR.sprite         = null;
+                    entitySR.color          = Color.white;
+                    entitySR.sortingOrder   = 1;
+                    entitySR.enabled        = false;
+
+                    // Animator is added but left with no controller until RefreshVisuals assigns one
+                    Animator anim = entityObj.AddComponent<Animator>();
+                    anim.enabled  = false;
+
+                    entityRenderers[x, y] = entitySR;
+                    entityAnimators[x, y] = anim;
                 }
             }
         }
@@ -118,7 +162,7 @@ namespace SignalNoise.Grid
 
         private void RefreshVisuals()
         {
-            if (cellRenderers == null || gridManager == null) return;
+            if (bgRenderers == null || gridManager == null) return;
 
             int w = gridManager.Width;
             int h = gridManager.Height;
@@ -130,25 +174,62 @@ namespace SignalNoise.Grid
                     CellData cell = gridManager.GetCell(x, y);
                     if (cell == null) continue;
 
-                    SpriteRenderer sr = cellRenderers[x, y];
+                    SpriteRenderer bgSR     = bgRenderers[x, y];
+                    SpriteRenderer entitySR = entityRenderers[x, y];
+                    Animator       anim     = entityAnimators[x, y];
+
+                    // ── Background: always neutral, just the grid image ───────────
+                    bgSR.sprite = spriteEmpty != null ? spriteEmpty : defaultBlockSprite;
+                    bgSR.color  = cell.isVisible ? colorEmpty : colorHidden;
 
                     if (!cell.isVisible)
                     {
-                        sr.color = colorHidden;
+                        anim.enabled     = false;
+                        entitySR.enabled = false;
                         continue;
                     }
 
-                    Color baseColor = EntityColor(cell.entityType);
+                    // ── Entity tint: noise/stability applied to the sprite itself ─
+                    Color entityTint = Color.white;
+                    entityTint = Color.Lerp(entityTint, Color.red,   cell.noiseLevel * 0.4f);
+                    entityTint = Color.Lerp(Color.black, entityTint, 0.4f + cell.stability * 0.6f);
 
-                    // Tint toward red based on noiseLevel, darken with low stability
-                    baseColor = Color.Lerp(baseColor, Color.red, cell.noiseLevel * 0.4f);
-                    baseColor = Color.Lerp(Color.black, baseColor, 0.4f + cell.stability * 0.6f);
-
-                    // Highlight selected cell
                     if (selectedCell.x == x && selectedCell.y == y)
-                        baseColor = Color.Lerp(baseColor, colorSelected, 0.6f);
+                        entityTint = Color.Lerp(entityTint, colorSelected, 0.6f);
 
-                    sr.color = baseColor;
+                    // ── Entity layer: animator > static sprite > prototype block ──
+                    RuntimeAnimatorController controller = EntityAnimator(cell.entityType);
+                    Sprite entitySprite                  = EntitySprite(cell.entityType);
+
+                    if (controller != null)
+                    {
+                        if (anim.runtimeAnimatorController != controller)
+                            anim.runtimeAnimatorController = controller;
+                        anim.enabled     = true;
+                        entitySR.color   = entityTint;
+                        entitySR.enabled = true;
+                    }
+                    else if (entitySprite != null)
+                    {
+                        anim.enabled     = false;
+                        entitySR.sprite  = entitySprite;
+                        entitySR.color   = entityTint;
+                        entitySR.enabled = true;
+                    }
+                    else if (cell.entityType != EntityType.Empty)
+                    {
+                        // Prototype fallback: colored block tinted by game state
+                        anim.enabled     = false;
+                        entitySR.sprite  = defaultBlockSprite;
+                        entitySR.color   = Color.Lerp(EntityColor(cell.entityType), Color.red, cell.noiseLevel * 0.4f);
+                        entitySR.color   = Color.Lerp(Color.black, entitySR.color, 0.4f + cell.stability * 0.6f);
+                        entitySR.enabled = true;
+                    }
+                    else
+                    {
+                        anim.enabled     = false;
+                        entitySR.enabled = false;
+                    }
                 }
             }
         }
@@ -160,8 +241,6 @@ namespace SignalNoise.Grid
             if (!Input.GetMouseButtonDown(0)) return;
             if (mainCamera == null) return;
 
-            // For orthographic cameras z=0 works fine; for perspective cameras we need
-            // the distance from the camera to the grid plane (z=0 in world space).
             float distToGrid = mainCamera.orthographic
                 ? 0f
                 : Mathf.Abs(mainCamera.transform.position.z - cellDepth);
@@ -183,8 +262,8 @@ namespace SignalNoise.Grid
         {
             if (gridManager == null) return null;
 
-            int w    = gridManager.Width;
-            int h    = gridManager.Height;
+            int w      = gridManager.Width;
+            int h      = gridManager.Height;
             float step = cellSize + cellGap;
 
             float offsetX = -(w - 1) * step * 0.5f + transform.position.x;
@@ -205,21 +284,43 @@ namespace SignalNoise.Grid
         {
             switch (type)
             {
-                case EntityType.SignalNode:   return colorSignalNode;
-                case EntityType.NoiseCluster: return colorNoiseCluster;
-                case EntityType.EchoFragment: return colorEchoFragment;
+                case EntityType.SignalNode:    return colorSignalNode;
+                case EntityType.NoiseCluster:  return colorNoiseCluster;
+                case EntityType.EchoFragment:  return colorEchoFragment;
                 case EntityType.WatcherDaemon: return colorWatcher;
-                case EntityType.DriftDaemon:  return colorDrift;
-                default:                      return colorEmpty;
+                case EntityType.DriftDaemon:   return colorDrift;
+                default:                       return colorEmpty;
             }
         }
 
-        /// <summary>
-        /// Returns Unity's built-in white sprite so no external assets are required.
-        /// </summary>
-        private Sprite GetDefaultSprite()
+        private RuntimeAnimatorController EntityAnimator(EntityType type)
         {
-            // Creates a 1x1 white texture and wraps it as a sprite
+            switch (type)
+            {
+                case EntityType.SignalNode:    return animSignalNode;
+                case EntityType.NoiseCluster:  return animNoiseCluster;
+                case EntityType.EchoFragment:  return animEchoFragment;
+                case EntityType.WatcherDaemon: return animWatcher;
+                case EntityType.DriftDaemon:   return animDrift;
+                default:                       return null;
+            }
+        }
+
+        private Sprite EntitySprite(EntityType type)
+        {
+            switch (type)
+            {
+                case EntityType.SignalNode:    return spriteSignalNode;
+                case EntityType.NoiseCluster:  return spriteNoiseCluster;
+                case EntityType.EchoFragment:  return spriteEchoFragment;
+                case EntityType.WatcherDaemon: return spriteWatcher;
+                case EntityType.DriftDaemon:   return spriteDrift;
+                default:                       return null;
+            }
+        }
+
+        private static Sprite MakeWhiteSprite()
+        {
             Texture2D tex = new Texture2D(1, 1);
             tex.SetPixel(0, 0, Color.white);
             tex.Apply();
