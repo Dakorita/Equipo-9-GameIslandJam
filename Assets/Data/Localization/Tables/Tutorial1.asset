@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
-  m_Name: TablaPrueba
+  m_Name: Tutorial1
   m_EditorClassIdentifier: Unity.Localization.Editor::UnityEditor.Localization.StringTableCollection
-  m_SharedTableData: {fileID: 11400000, guid: 4f34616ea9945214db988f92abfc8535, type: 2}
+  m_SharedTableData: {fileID: 11400000, guid: 059d02e9c9e0f5e43ad38a843cf4ff3b, type: 2}
   m_Tables:
-  - {fileID: 11400000, guid: fd1faceabe17c7045b18bfcb74591357, type: 2}
-  - {fileID: 11400000, guid: 4684557ef8f9d7c42b7b8b0e118e26f2, type: 2}
+  - {fileID: 11400000, guid: 9cba1546886aece4c9e6550f3e565b20, type: 2}
+  - {fileID: 11400000, guid: 6017fc1631380ba42add114622350be1, type: 2}
   m_Extensions: []
   m_Group: String Table
   references:
