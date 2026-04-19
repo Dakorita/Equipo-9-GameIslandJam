@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 8314675388255060609}
   m_Layer: 0
   m_Name: VN_Manager
-  m_TagString: Untagged
+  m_TagString: VNManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
