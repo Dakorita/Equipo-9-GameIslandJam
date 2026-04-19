@@ -1189,7 +1189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f9d37de5caac6438a81beee8b90759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeScene
-  scene: Level1
+  scene: Tuto_1
 --- !u!1 &1316869590
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1669429735424
-    m_Localized: All clear, connection you to station 24 now, stand by.
+    m_Localized: All clear, connecting you to station 4 now, stand by.
     m_Metadata:
       m_Items: []
   - m_Id: 1797947404288
@@ -50,15 +50,18 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3304126164992
-    m_Localized: Nicely done, agent! Here comes another message for you!
+    m_Localized: As you know, Wavebugs help with communications and clean up data.
+      And plus, they are very sweet! You'll recognize them with their soft white
+      colouring
     m_Metadata:
       m_Items: []
   - m_Id: 3465904664576
-    m_Localized: See? I knew youd be a great asset to the team!
+    m_Localized: 'You can help them along with your amplifying tool (key 2) by boosting
+      their signal output! '
     m_Metadata:
       m_Items: []
   - m_Id: 3631877468160
-    m_Localized: "Oh well\u2026 Maybe next time?"
+    m_Localized: "Oh well...\xA6 Maybe next time?"
     m_Metadata:
       m_Items: []
   - m_Id: 3762307739648
@@ -67,6 +70,28 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 3828774875136
     m_Localized: Hello? Are you still there? We cant seem to find your signal.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21764969398272
+    m_Localized: See? I knew I could count on you!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21765808259072
+    m_Localized: Nicely done, agent! Here comes another message for you!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21766886195200
+    m_Localized: Careful though! you got to keep those little guys safe from them
+      nasty signavores, they'll try to eat 'em all up, and those breed like rabbits!
+      they're a real pain to deal with, so watch out you dont have too many of them
+      at one time or else they'll cause too much interference and youll lose the
+      signal.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24078224523264
+    m_Localized: but you're not entirely helpless, give 'em a good tap with your
+      Static Reducers (key 1) and that should keep 'em quiet for a while. When your
+      run outof actions, end your turn using space. Or before that, thats up to you.
     m_Metadata:
       m_Items: []
   references:

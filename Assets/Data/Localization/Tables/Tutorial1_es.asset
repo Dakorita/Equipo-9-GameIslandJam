@@ -19,7 +19,80 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 1546209472512
-    m_Localized: ...
+    m_Localized: '... '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210025852928
+    m_Localized: "Sr. M, habla control de misi\xF3n, necesitamos una comprobaci\xF3n
+      de radio en la estaci\xF3n cuatro. cambio."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1250079027200
+    m_Localized: "Te recibo alto y claro. Espera confirmaci\xF3n. Cambio."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1399572410368
+    m_Localized: Recibido.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1669429735424
+    m_Localized: "Todo despejado, conect\xE1ndote con la estaci\xF3n 4 ahora, espera."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1797947404288
+    m_Localized: Recibido, abriendo comunicaciones bidireccionales ahora.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2250307284992
+    m_Localized: "\xA1Hola se\xF1or! Ha pasado tiempo desde la \xFAltima vez que
+      hablamos, \xBFeh? \xA1Es hora de tu evaluaci\xF3n rutinaria! Seguro que ya
+      est\xE1s m\xE1s que familiarizado con todo esto, \xA1pero es el procedimiento!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3304126164992
+    m_Localized: "Como sabes, los Wavebugs ayudan con las comunicaciones y limpian
+      los datos. \xA1Y adem\xE1s son adorables! Los reconocer\xE1s por su suave color
+      blanco."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3465904664576
+    m_Localized: "\xA1Puedes ayudarlos con tu herramienta de amplificaci\xF3n (tecla
+      2) aumentando la potencia de su se\xF1al!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21766886195200
+    m_Localized: "\xA1Pero cuidado! Tienes que mantener a esos peque\xF1os a salvo
+      de los signavoros, intentar\xE1n com\xE9rselos a todos, \xA1y se reproducen
+      como conejos! Son un verdadero dolor de cabeza, as\xED que procura no tener
+      demasiados a la vez o causar\xE1n demasiada interferencia y perder\xE1s la
+      se\xF1al."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24078224523264
+    m_Localized: "Pero no est\xE1s completamente indefenso, dales un buen golpe con
+      tus Reductores de Est\xE1tica (tecla 1) y eso deber\xEDa mantenerlos tranquilos
+      por un rato. Cuando te quedes sin acciones usa espacio para terminar tu turno.
+      O antes, eso es decisi\xF3n tuya"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21764969398272
+    m_Localized: "\xBFVes? \xA1Sab\xEDa que pod\xEDa contar contigo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21765808259072
+    m_Localized: "\xA1Bien hecho, agente! \xA1Aqu\xED llega otro mensaje para ti!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3631877468160
+    m_Localized: "Bueno... quiz\xE1 la pr\xF3xima vez."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3762307739648
+    m_Localized: "Creo que deber\xEDas repetir tus cursos de entrenamiento."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3828774875136
+    m_Localized: "\xBFHola? \xBFSigues ah\xED? No logramos encontrar tu se\xF1al."
     m_Metadata:
       m_Items: []
   references:
