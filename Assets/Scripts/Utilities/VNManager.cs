@@ -12,6 +12,7 @@ public class VNManager : MonoBehaviour
     [SerializeField] GameStateManager gameStateManager;
     bool waitingForEventInput = false;
     [SerializeField] GameObject gridRenderer;
+    [SerializeField] GameObject turnManager;
 
     public InputActionReference nextLineAction;
 
@@ -75,6 +76,7 @@ public class VNManager : MonoBehaviour
 
     void Start()
     {
+        turnManager.SetActive(false);
         gridRenderer.SetActive(false);
         ShowLine();
     }
@@ -146,6 +148,10 @@ public class VNManager : MonoBehaviour
         {
             gridRenderer.SetActive(true);
         }
+        if (turnManager != null)
+        {
+            turnManager.SetActive(true);
+        }
         if (gameStateManager != null)
         {   
             gameStateManager.StartGame(gameStateManager.ActiveCharacter);
@@ -165,5 +171,9 @@ public class VNManager : MonoBehaviour
         {
             display.Hide();
         }
+    }
+    public bool IsPaused()
+    {
+        return isPaused;
     }
 }
