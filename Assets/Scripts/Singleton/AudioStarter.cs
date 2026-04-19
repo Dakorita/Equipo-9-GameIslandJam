@@ -6,6 +6,7 @@ public class AudioStarter : MonoBehaviour
     {
         Menu,
         Gameplay,
+        gameplay2,
         Exito,
         Fracaso
     }
