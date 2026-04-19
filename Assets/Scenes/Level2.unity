@@ -212,13 +212,29 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7834987263183742698, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
+      propertyPath: dialogues.Array.data[0].text
+      value: '__*#@!^$
+
+        $*_~>_*E$$_%+=*
+
+        @!^$*>_E__**$~#'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834987263183742698, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
       propertyPath: dialogues.Array.data[0].pauseForEvent
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834987263183742698, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
+      propertyPath: characters.Array.data[1].characterName
+      value: ???
       objectReference: {fileID: 0}
     - target: {fileID: 7834987263183742698, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
       propertyPath: characters.Array.data[1].defaultSprite
       value: 
       objectReference: {fileID: 21300000, guid: 1cdba4a708a99ca49b5ea608b4895b92, type: 3}
+    - target: {fileID: 7834987263183742698, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
+      propertyPath: dialogues.Array.data[0].useLocalization
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7834987263183742698, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
       propertyPath: dialogues.Array.data[0].visibleCharacters.Array.size
       value: 2

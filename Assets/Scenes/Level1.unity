@@ -171,6 +171,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: True_Final
       objectReference: {fileID: 0}
+    - target: {fileID: 7834987263183742698, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
+      propertyPath: dialogues.Array.data[0].text
+      value: '>>$$_E__*$*!=+$*_*$$>_>_E***~@#
+
+        >_>_**$$E_$*$^%$$_*>*__E**_*+=~'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834987263183742698, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
+      propertyPath: characters.Array.data[1].characterName
+      value: ???
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834987263183742698, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
+      propertyPath: dialogues.Array.data[0].useLocalization
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
