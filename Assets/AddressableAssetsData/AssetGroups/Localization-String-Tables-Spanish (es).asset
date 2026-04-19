@@ -21,8 +21,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-es
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ac75c7b769392c1a7b1ebae2e738e2b7
-    m_Address: Tutorial2_es
+  - m_GUID: aa8b8149eaf954149ac0a995bdbe6c91
+    m_Address: UIText_es
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es
