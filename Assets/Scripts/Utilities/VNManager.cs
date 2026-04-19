@@ -14,6 +14,7 @@ public class VNManager : MonoBehaviour
     [SerializeField] GameObject gridRenderer;
     [SerializeField] GameObject turnManager;
     public string nextSceneName;
+    [SerializeField] private GameObject decodify;
 
     public InputActionReference nextLineAction;
 
@@ -163,6 +164,7 @@ public class VNManager : MonoBehaviour
     {
         gridRenderer.SetActive(false);
         uiManager.ActivateUI();
+        decodify.SetActive(false);
         isPaused = false;
         NextLine();
     }
