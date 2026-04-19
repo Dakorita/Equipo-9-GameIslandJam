@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Tuto2_es
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: e68b7e721fcbe26aa8b894ac6efe8878, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 4100000000000
+    m_Localized: "Genial, parece que todav\xEDa lo tienes dominado. Ahora vamos a
+      subir un poco la dificultad."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000001
+    m_Localized: "A veces, el Amplificador y el Reductor de Est\xE1tica no son suficientes
+      para sacarte de un apuro. As\xED que hay dos herramientas m\xE1s que necesitar\xE1s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000002
+    m_Localized: "Primero, el Transmisor (tecla 4). Una vez que tengas la herramienta
+      seleccionada, simplemente ap\xFAntala al espacio y todos los Bugs adyacentes
+      se mover\xE1n a otra posici\xF3n cercana. Eso deber\xEDa ayudarte a reorganizar
+      la situaci\xF3n si est\xE1s en un aprieto. Pero cuidado, usarlo demasiado puede
+      hacer que los bichos se queden loopeando de forma impredecible."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000003
+    m_Localized: "Y por \xFAltimo, el Bloqueo de Seguridad (tecla ??). Si ves que
+      alg\xFAn bug se acerca demasiado a donde no deber\xEDa, o est\xE1 amenazado
+      desde varias direcciones, \xA1puedes ponerle un Bloqueo de Seguridad!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000004
+    m_Localized: "Esto mantendr\xE1 a esos peque\xF1os a salvo de las amenazas y
+      los dejar\xE1 bloqueados en su lugar durante un tiempo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000005
+    m_Localized: "\xDAsalo en cualquier Bug que quieras, Dios sabe que me gustar\xEDa
+      poder bloquear todas esas molestas interferencias, pero si fuera tan f\xE1cil
+      no necesitar\xEDamos especialistas como t\xFA, \xBFverdad?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000006
+    m_Localized: "\xA1Pru\xE9balo!"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

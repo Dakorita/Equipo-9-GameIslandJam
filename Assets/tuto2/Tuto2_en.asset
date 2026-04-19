@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Tuto2_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: e68b7e721fcbe26aa8b894ac6efe8878, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 4100000000000
+    m_Localized: Great, looks like you've still got the hang of it. Now let's kick
+      it up a notch.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000001
+    m_Localized: Sometimes, the Amplifier and Static Reducer aren't enough to get
+      you out of a tough spot. So there's two more tools you'll need.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000002
+    m_Localized: First, the Transmitter (key 4). Once you've got the tool selected,
+      simply aim it at space, and all directly adjacent Bugs will move around to
+      a different adjacent location. That should mix things up a bit if you're in
+      a pinch. But be careful, overusing it can make the bugs loop around unpredictably.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000003
+    m_Localized: And lastly, the Safety Lock (key ??). If you see any bug getting
+      too close to where it shouldn't, or getting threatened in multiple directions,
+      you can put a Safety Lock on it!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000004
+    m_Localized: This'll keep the little buggers safe from oncoming threats and lock
+      them in place for a while.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000005
+    m_Localized: Use it on any Bug you like, god knows I wish I could lock up all
+      those pesky interferences, but if it was that easy we wouldn't need specialists
+      like you, would we?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000006
+    m_Localized: Give it a go!
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

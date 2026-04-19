@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Tuto3_es
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 00ffae4e865b90395b1ac604699b5ce8, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 4100000000007
+    m_Localized: "Ahora, hay otra cosa que deber\xEDas saber."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000008
+    m_Localized: El Drifter.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000009
+    m_Localized: "El Drifter es un bug que se mueve libremente por la cuadr\xEDcula,
+      desplazando cosas a su paso."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000010
+    m_Localized: "Cuando hace esto, amplifica el efecto del bug que ha movido, \xBFlo
+      pillas?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000011
+    m_Localized: "Te conviene que se mantenga cerca de tus Wavebugs para que amplifique
+      tu se\xF1al de forma natural."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4100000000012
+    m_Localized: "Si se acerca a esos otros peque\xF1os cretinos, corres el riesgo
+      de que amplifique la interferencia de ruido. Y eso definitivamente no es bueno."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -101,7 +101,7 @@ namespace SignalNoise.Game
         {
             if (CurrentPhase != TurnPhase.PlayerPhase) return;
 
-            // Resolve
+            // ResolveConfirm
             CurrentPhase = TurnPhase.Resolve;
             OnTurnResolved?.Invoke();
             Debug.Log($"[TurnManager] Turn {CurrentTurn} resolved.");

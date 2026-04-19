@@ -18,7 +18,7 @@ namespace SignalNoise.Game
         [SerializeField] private GridManager     gridManager;
         [SerializeField] private PlayerController playerController;
         [SerializeField] private CharacterData   characterData;
-
+        [SerializeField] private VNManager vnManager;
         [Header("Level Configuration")]
         [Tooltip("Defines which entities are placed on the grid. Leave empty to use the built-in fallback layout.")]
         [SerializeField] private LevelConfig levelConfig;
@@ -45,7 +45,7 @@ namespace SignalNoise.Game
             if (Input.GetKeyDown(KeyCode.Alpha2)) playerController?.SelectAmplifySignal();
             if (Input.GetKeyDown(KeyCode.Alpha3)) playerController?.SelectIsolateCell();
             if (Input.GetKeyDown(KeyCode.Alpha4)) playerController?.SelectRedirectFlow();
-            if (Input.GetKeyDown(KeyCode.Space))  TurnManager.Instance?.ConfirmTurn();
+            if (Input.GetKeyDown(KeyCode.Space) && vnManager.IsPaused())  TurnManager.Instance?.ConfirmTurn();
         }
 
         private void OnGUI()

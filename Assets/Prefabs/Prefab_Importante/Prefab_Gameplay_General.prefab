@@ -275,12 +275,12 @@ MonoBehaviour:
   cellSize: 1
   cellGap: 0.05
   cellDepth: 0
-  spriteEmpty: {fileID: 0}
-  spriteSignalNode: {fileID: 21300000, guid: cb254dbba26c74740b063ebee1b20acc, type: 3}
-  spriteNoiseCluster: {fileID: 21300000, guid: bf00dfaf4037ad649b9e5d0e68b8514c, type: 3}
-  spriteEchoFragment: {fileID: 21300000, guid: cbbac435ca47ac3409bfb7e5262ea8d6, type: 3}
+  spriteEmpty: {fileID: 21300000, guid: b784854a62a937443b4d1043d8f69ad5, type: 3}
+  spriteSignalNode: {fileID: 21300000, guid: 4d33599504798364db8a46fac1deb51f, type: 3}
+  spriteNoiseCluster: {fileID: 21300000, guid: bead3f1f00e1918488c2c05a8cff366d, type: 3}
+  spriteEchoFragment: {fileID: 21300000, guid: cb254dbba26c74740b063ebee1b20acc, type: 3}
   spriteWatcher: {fileID: 0}
-  spriteDrift: {fileID: 21300000, guid: 4d33599504798364db8a46fac1deb51f, type: 3}
+  spriteDrift: {fileID: 21300000, guid: cbbac435ca47ac3409bfb7e5262ea8d6, type: 3}
   animSignalNode: {fileID: 0}
   animNoiseCluster: {fileID: 0}
   animEchoFragment: {fileID: 0}
