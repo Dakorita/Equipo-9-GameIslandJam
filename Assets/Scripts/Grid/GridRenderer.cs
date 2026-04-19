@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using SignalNoise.Entities;
+using SignalNoise.Player;
 
 namespace SignalNoise.Grid
 {
@@ -56,12 +57,18 @@ namespace SignalNoise.Grid
         [SerializeField] private Color colorHidden        = new Color(0.05f, 0.05f, 0.05f);
         [SerializeField] private Color colorSelected      = new Color(1.0f,  1.0f,  0.0f, 0.5f);
 
+        [Header("Hover AoE Preview")]
+        [Tooltip("Color of the AoE square shown while hovering over a cell.")]
+        [SerializeField] private Color colorHoverPreview  = new Color(1.0f, 1.0f, 0.0f, 0.25f);
+
         // ── Private state ───────────────────────────────────────────────────────
 
         private SpriteRenderer[,] bgRenderers;     // background / tint layer
         private SpriteRenderer[,] entityRenderers; // entity sprite layer (on top)
+        private SpriteRenderer[,] hoverRenderers;  // AoE hover preview layer (topmost)
         private Animator[,]       entityAnimators; // animator per entity cell (may be null)
         private Vector2Int selectedCell = new Vector2Int(-1, -1);
+        private Vector2Int hoveredCell  = new Vector2Int(-1, -1);
         private Camera mainCamera;
 
         // Cached 1x1 white sprite used as default block when no sprite is assigned
@@ -95,6 +102,7 @@ namespace SignalNoise.Grid
 
         private void Update()
         {
+            HandleMouseHover();
             HandleMouseInput();
         }
 
@@ -107,6 +115,7 @@ namespace SignalNoise.Grid
 
             bgRenderers     = new SpriteRenderer[w, h];
             entityRenderers = new SpriteRenderer[w, h];
+            hoverRenderers  = new SpriteRenderer[w, h];
             entityAnimators = new Animator[w, h];
 
             float step    = cellSize + cellGap;
@@ -154,6 +163,19 @@ namespace SignalNoise.Grid
 
                     entityRenderers[x, y] = entitySR;
                     entityAnimators[x, y] = anim;
+
+                    // ── Hover AoE preview layer (topmost) ────────────────────────
+                    GameObject hoverObj = new GameObject($"Cell_{x}_{y}_Hover");
+                    hoverObj.transform.SetParent(transform, false);
+                    hoverObj.transform.localPosition = new Vector3(localPos.x, localPos.y, localPos.z - 0.02f);
+                    hoverObj.transform.localScale    = Vector3.one * cellSize;
+
+                    SpriteRenderer hoverSR = hoverObj.AddComponent<SpriteRenderer>();
+                    hoverSR.sprite         = defaultBlockSprite;
+                    hoverSR.color          = Color.clear;
+                    hoverSR.sortingOrder   = 2;
+
+                    hoverRenderers[x, y] = hoverSR;
                 }
             }
         }
@@ -235,6 +257,59 @@ namespace SignalNoise.Grid
         }
 
         // ── Input ────────────────────────────────────────────────────────────────
+
+        private void HandleMouseHover()
+        {
+            if (hoverRenderers == null || mainCamera == null) return;
+
+            float distToGrid = mainCamera.orthographic
+                ? 0f
+                : Mathf.Abs(mainCamera.transform.position.z - cellDepth);
+
+            Vector3 screenPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distToGrid);
+            Vector3 worldPos  = mainCamera.ScreenToWorldPoint(screenPos);
+            worldPos.z = 0f;
+
+            Vector2Int? hit = WorldToCell(worldPos);
+
+            if (!PlayerController.PlayerTurnActive || !hit.HasValue)
+            {
+                // Clear overlay when not the player's turn or mouse is off-grid
+                if (hoveredCell.x != -1)
+                {
+                    hoveredCell = new Vector2Int(-1, -1);
+                    UpdateHoverOverlay();
+                }
+                return;
+            }
+
+            if (hit.Value != hoveredCell)
+            {
+                hoveredCell = hit.Value;
+                UpdateHoverOverlay();
+            }
+        }
+
+        private void UpdateHoverOverlay()
+        {
+            if (hoverRenderers == null || gridManager == null) return;
+
+            int w = gridManager.Width;
+            int h = gridManager.Height;
+            int radius = PlayerController.HoverRadius;
+
+            for (int x = 0; x < w; x++)
+            {
+                for (int y = 0; y < h; y++)
+                {
+                    bool inAoE = hoveredCell.x != -1
+                        && Mathf.Abs(x - hoveredCell.x) <= radius
+                        && Mathf.Abs(y - hoveredCell.y) <= radius;
+
+                    hoverRenderers[x, y].color = inAoE ? colorHoverPreview : Color.clear;
+                }
+            }
+        }
 
         private void HandleMouseInput()
         {
