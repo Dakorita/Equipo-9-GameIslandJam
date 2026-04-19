@@ -7,7 +7,6 @@ using UnityEngine.Localization.Settings;
 
 public class LocaleSelector : MonoBehaviour
 {
-    private bool active = false;
     public bool isSpanish = true;
     public int localeID = 1;
     [SerializeField] SpriteController spriteController;

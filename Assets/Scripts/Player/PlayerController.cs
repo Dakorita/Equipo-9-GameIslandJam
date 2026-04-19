@@ -99,10 +99,22 @@ namespace SignalNoise.Player
 
             switch (selectedAction)
             {
-                case ActionType.FilterZone:    ApplyFilterZone(pos);    break;
-                case ActionType.AmplifySignal: ApplyAmplifySignal(pos); break;
-                case ActionType.IsolateCell:   ApplyIsolateCell(pos);   break;
-                case ActionType.RedirectFlow:  ApplyRedirectFlow(pos);  break;
+                case ActionType.FilterZone:    
+                    ApplyFilterZone(pos);
+                    AudioManager.instance.PlaySFX("rreducir");
+                    break;
+                case ActionType.AmplifySignal: 
+                    ApplyAmplifySignal(pos);
+                    AudioManager.instance.PlaySFX("ramplificar");
+                    break;
+                case ActionType.IsolateCell:   
+                    ApplyIsolateCell(pos);
+                    AudioManager.instance.PlaySFX("rbloqueo");
+                    break;
+                case ActionType.RedirectFlow:  
+                    ApplyRedirectFlow(pos);
+                    AudioManager.instance.PlaySFX("rredirigir");
+                    break;
             }
 
             TurnManager.Instance.NotifyActionUsed();

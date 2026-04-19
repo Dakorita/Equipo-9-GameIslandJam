@@ -29,7 +29,7 @@ public class AudioManager : MonoBehaviour
         sfxClips["ramplificar"] = Resources.Load<AudioClip>("SFX/ramplificar");
         sfxClips["rbloqueo"] = Resources.Load<AudioClip>("SFX/rbloqueo");
         sfxClips["rredirigir"] = Resources.Load<AudioClip>("SFX/rredirigir");
-        sfxClips["rreducir"] = Resources.Load<AudioClip>("SFX/rreducir");
+        sfxClips["rreducir"] = Resources.Load<AudioClip>("SFX/rreducirsonido");
         sfxClips["vfem"] = Resources.Load<AudioClip>("SFX/vfem");
         sfxClips["vmasc"] = Resources.Load<AudioClip>("SFX/vmasc");
         sfxClips["vprota"] = Resources.Load<AudioClip>("SFX/vprota");
@@ -49,6 +49,7 @@ public class AudioManager : MonoBehaviour
         if (sfxClips.ContainsKey(clipName))
         {
             sfxSource.PlayOneShot(sfxClips[clipName]);
+            Debug.Log("Reproduciendo SFX: " + clipName);
         }
         else Debug.LogWarning("El AudioClip " + clipName + " no se encontr� en el diccionario de sfxClips.");
         
