@@ -13,6 +13,7 @@ public class VNManager : MonoBehaviour
     bool waitingForEventInput = false;
     [SerializeField] GameObject gridRenderer;
     [SerializeField] GameObject turnManager;
+    public string nextSceneName;
 
     public InputActionReference nextLineAction;
 
@@ -88,6 +89,7 @@ public class VNManager : MonoBehaviour
         if (currentLine >= sceneData.dialogues.Count)
         {
             Debug.Log("Fin de la escena");
+            SCManager.instance.LoadScene(nextSceneName);
             return;
         }
 

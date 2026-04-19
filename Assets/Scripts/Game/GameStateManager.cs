@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using SignalNoise.Characters;
+using UnityEngine.SceneManagement;
 
 namespace SignalNoise.Game
 {
@@ -11,7 +12,7 @@ namespace SignalNoise.Game
         Won,
         Lost
     }
-    
+
 
     /// <summary>
     /// Singleton — manages the top-level game phase and exposes global state.
@@ -32,26 +33,26 @@ namespace SignalNoise.Game
             }
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnLoad;
         }
 
         // ── Static Events ────────────────────────────────────────────────────────
 
-        public static event Action<string>    OnGameWon;
-        public static event Action<string>    OnGameLost;
+        public static event Action<string> OnGameWon;
+        public static event Action<string> OnGameLost;
         public static event Action<GamePhase> OnPhaseChanged;
 
         // ── Public State ─────────────────────────────────────────────────────────
 
-        public GamePhase CurrentPhase    { get; private set; } = GamePhase.CharacterSelect;
+        public GamePhase CurrentPhase { get; private set; } = GamePhase.CharacterSelect;
         public CharacterData ActiveCharacter { get; private set; }
 
         // ── Inspector ────────────────────────────────────────────────────────────
 
         [Header("References")]
         [SerializeField] private TurnManager turnManager;
-    
-        // ── Public API ───────────────────────────────────────────────────────────
 
+        // ── Public API ───────────────────────────────────────────────────────────
         /// <summary>
         /// Called when the player selects a character and begins the run.
         /// </summary>
@@ -100,5 +101,11 @@ namespace SignalNoise.Game
             OnPhaseChanged?.Invoke(phase);
             Debug.Log($"[GameStateManager] Phase → {phase}");
         }
+        public void OnLoad(Scene scene, LoadSceneMode mode)
+        {
+
+            vnManager = GameObject.FindGameObjectWithTag("VNManager").GetComponent<VNManager>();
+        }
     }
+
 }
