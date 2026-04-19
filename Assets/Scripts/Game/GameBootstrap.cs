@@ -4,6 +4,7 @@ using SignalNoise.Characters;
 using SignalNoise.Entities;
 using SignalNoise.Grid;
 using SignalNoise.Player;
+using TMPro;
 
 namespace SignalNoise.Game
 {
@@ -22,7 +23,7 @@ namespace SignalNoise.Game
         [Header("Level Configuration")]
         [Tooltip("Defines which entities are placed on the grid. Leave empty to use the built-in fallback layout.")]
         [SerializeField] private LevelConfig levelConfig;
-
+        [SerializeField] private TextMeshProUGUI texto;
         private void Start()
         {
             if (gridManager == null)
@@ -51,17 +52,20 @@ namespace SignalNoise.Game
         private void OnGUI()
         {
             if (TurnManager.Instance == null || gridManager == null) return;
-
+            if (texto == null) return;
+            texto.text = $"Turn: {TurnManager.Instance.CurrentTurn}  |  Actions left: {TurnManager.Instance.ActionsLeft}\n" +
+                         $"Entropy: {gridManager.GetSystemEntropy():P0}  |  Signal: {gridManager.GetSignalStability():P0}\n" +
+                         "Keys: [1] Filter  [2] Amplify  [3] Isolate  [4] Redirect  [Space] End Turn";
             GUIStyle style = new GUIStyle(GUI.skin.label) { fontSize = 14 };
 
-            GUI.Label(new Rect(10, 10, 300, 25),
+            /**GUI.Label(new Rect(10, 10, 300, 25),
                 $"Turn: {TurnManager.Instance.CurrentTurn}  |  Actions left: {TurnManager.Instance.ActionsLeft}", style);
 
             GUI.Label(new Rect(10, 30, 300, 25),
                 $"Entropy: {gridManager.GetSystemEntropy():P0}  |  Signal: {gridManager.GetSignalStability():P0}", style);
 
             GUI.Label(new Rect(10, 50, 350, 25),
-                "Keys: [1] Filter  [2] Amplify  [3] Isolate  [4] Redirect  [Space] End Turn", style);
+                "Keys: [1] Filter  [2] Amplify  [3] Isolate  [4] Redirect  [Space] End Turn", style);**/
         }
 
         // ── Placement ────────────────────────────────────────────────────────────
