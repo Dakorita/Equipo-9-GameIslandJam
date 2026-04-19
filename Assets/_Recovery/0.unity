@@ -316,18 +316,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2259604221659183460, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
-      propertyPath: stabilityTurnsRequired
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2848843792476963013, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982311442341841291, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5607786705241132825, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -368,10 +356,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6451929089189206440, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
-      propertyPath: nextSceneName
-      value: Level1
-      objectReference: {fileID: 0}
     - target: {fileID: 7005298127030318475, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
       propertyPath: m_Camera
       value: 
@@ -381,16 +365,16 @@ PrefabInstance:
       value: Prefab_Gameplay_General
       objectReference: {fileID: 0}
     - target: {fileID: 7834987263183742698, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
-      propertyPath: dialogues.Array.data[5].pauseForEvent
+      propertyPath: dialogues.Array.data[0].visibleCharacters.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834987263183742698, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
+      propertyPath: 'dialogues.Array.data[0].visibleCharacters.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834987263183742698, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
+      propertyPath: 'dialogues.Array.data[0].visibleCharacters.Array.data[1]'
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7834987263183742698, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
-      propertyPath: characters.Array.data[0].characterName
-      value: Mr M.
-      objectReference: {fileID: 0}
-    - target: {fileID: 7834987263183742698, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
-      propertyPath: characters.Array.data[1].characterName
-      value: Mrs N.
       objectReference: {fileID: 0}
     - target: {fileID: 7834987263183742698, guid: 59951920d3bee07b9a3ec6a16850a249, type: 3}
       propertyPath: dialogues.Array.data[2].localizedText.m_TableEntryReference.m_KeyId

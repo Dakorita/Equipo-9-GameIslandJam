@@ -547,6 +547,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prefab_Gameplay_General
       objectReference: {fileID: 0}
+    - target: {fileID: 3439798315280768941, guid: ebc6e4243415551408bc54d56730c237, type: 3}
+      propertyPath: colorHoverPreview.a
+      value: 0.24705882
+      objectReference: {fileID: 0}
     - target: {fileID: 4929601623161099154, guid: ebc6e4243415551408bc54d56730c237, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
