@@ -57,6 +57,10 @@ MonoBehaviour:
     m_Localized: "\xA1Pru\xE9balo!"
     m_Metadata:
       m_Items: []
+  - m_Id: 38156917551104
+    m_Localized: "\xA1Bien hecho!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
