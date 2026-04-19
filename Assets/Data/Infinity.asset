@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497e67e2da32a96e98268dc511b72ed6, type: 3}
   m_Name: Infinity
   m_EditorClassIdentifier: Assembly-CSharp::SignalNoise.Game.LevelConfig
-  useProceduralGeneration: 0
+  useProceduralGeneration: 1
   manualPlacements: []
   signalCount: 4
   noiseCount: 7

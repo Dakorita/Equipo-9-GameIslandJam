@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: b4dcd81a15529a74892e7b262d3448e6
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: cdd9f4fd44c6419429a4b06ed0ae22af
-  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 511dce20530bb934f9232c823d1bbcca
   - enabled: 1
@@ -23,6 +20,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tuto_3.unity
     guid: 9cb1d19140f88ec4eb4bb2c5a332d9b2
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: cdd9f4fd44c6419429a4b06ed0ae22af
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: d1a3f23f40fd7e452854e9e7ba9f560c
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 2b3644032dbe216e58a73d2a0a5ce270
+  - enabled: 1
+    path: Assets/Scenes/KeepPlaying.unity
+    guid: 2523a07b6ce9a85c7b234bbb2ab67d25
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 7be267214c68ecf41a2b62b40a8d3cf6, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: c6165ab2a70ebc5498f2ddc037f05cf8, type: 2}
