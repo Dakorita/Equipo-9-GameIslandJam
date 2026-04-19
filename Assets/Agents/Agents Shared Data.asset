@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: Tuto2 Shared Data
+  m_Name: Agents Shared Data
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
-  m_TableCollectionName: Tuto2
-  m_TableCollectionNameGuidString: e68b7e721fcbe26aa8b894ac6efe8878
+  m_TableCollectionName: Agents
+  m_TableCollectionNameGuidString: 6a2759c7d9ce5ddda9458e75147d3b51
   m_Entries:
   - m_Id: 4200000000000
     m_Key: Dialog01
@@ -42,11 +42,11 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 88186756284285008
+    rid: 88186771525599296
   references:
     version: 2
     RefIds:
-    - rid: 88186756284285008
+    - rid: 88186771525599296
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1776595363182
+        m_CustomEpoch: 1776603317862

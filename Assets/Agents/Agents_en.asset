@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Tuto2_en
+  m_Name: Agents_en
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
   m_LocaleId:
     m_Code: en
-  m_SharedData: {fileID: 11400000, guid: e68b7e721fcbe26aa8b894ac6efe8878, type: 2}
+  m_SharedData: {fileID: 11400000, guid: 6a2759c7d9ce5ddda9458e75147d3b51, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
