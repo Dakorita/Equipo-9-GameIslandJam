@@ -55,7 +55,7 @@ public class VNManager : MonoBehaviour
     void HandleInput()
     {
         if (isPaused) return;
-
+        AudioManager.instance.PlaySFX("clickboton");
         if (waitingForEventInput)
         {
             waitingForEventInput = false;
