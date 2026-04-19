@@ -556,6 +556,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -61.660004
       objectReference: {fileID: 0}
+    - target: {fileID: 8298540238238743662, guid: bc7e04a11436d5243a2e9ea03d04f9f2, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298540238238743662, guid: bc7e04a11436d5243a2e9ea03d04f9f2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1177543778, guid: 485b77438fb5181428cf139c32ed7ada, type: 3}
+    - target: {fileID: 8298540238238743662, guid: bc7e04a11436d5243a2e9ea03d04f9f2, type: 3}
+      propertyPath: m_Color.a
+      value: 0.88235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298540238238743662, guid: bc7e04a11436d5243a2e9ea03d04f9f2, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298540238238743662, guid: bc7e04a11436d5243a2e9ea03d04f9f2, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298540238238743662, guid: bc7e04a11436d5243a2e9ea03d04f9f2, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9141295404785684668, guid: bc7e04a11436d5243a2e9ea03d04f9f2, type: 3}
       propertyPath: m_Name
       value: CanvasVNFinal
@@ -563,13 +587,72 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 505728235886391361, guid: bc7e04a11436d5243a2e9ea03d04f9f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 284299163}
   m_SourcePrefab: {fileID: 100100000, guid: bc7e04a11436d5243a2e9ea03d04f9f2, type: 3}
 --- !u!224 &284299160 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 395428523074190270, guid: bc7e04a11436d5243a2e9ea03d04f9f2, type: 3}
   m_PrefabInstance: {fileID: 284299159}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &284299161 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6965577634995871695, guid: bc7e04a11436d5243a2e9ea03d04f9f2, type: 3}
+  m_PrefabInstance: {fileID: 284299159}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &284299162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 505728235886391361, guid: bc7e04a11436d5243a2e9ea03d04f9f2, type: 3}
+  m_PrefabInstance: {fileID: 284299159}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &284299163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284299162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:c79e221200d629141831133cdd1dd261
+    m_TableEntryReference:
+      m_KeyId: 27346426146816
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 284299161}
+        m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &310222918 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3012090232570680000, guid: bc7e04a11436d5243a2e9ea03d04f9f2, type: 3}

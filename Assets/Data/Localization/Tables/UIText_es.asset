@@ -34,6 +34,19 @@ MonoBehaviour:
     m_Localized: Mata a los blancos y se reproduce mientras causa interferencia
     m_Metadata:
       m_Items: []
+  - m_Id: 27346426146816
+    m_Localized: 'Teclas:
+
+      [1] Filtrar
+
+      [2] Amplificar
+
+      [3] Bloquear
+
+      [4]
+      Redirigir'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
