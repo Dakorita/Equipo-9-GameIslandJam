@@ -32,6 +32,14 @@ namespace SignalNoise.Player
         [SerializeField] private GridManager    gridManager;
         [SerializeField] private CharacterData  characterData;
 
+        // ── Static Hover State (read by GridRenderer) ────────────────────────────
+
+        /// <summary>Radius in cells of the currently selected action's AoE.</summary>
+        public static int HoverRadius { get; private set; } = 1;
+
+        /// <summary>True while it is the player's turn to act.</summary>
+        public static bool PlayerTurnActive { get; private set; }
+
         // ── Private State ────────────────────────────────────────────────────────
 
         private bool isPlayerTurn;
@@ -58,6 +66,7 @@ namespace SignalNoise.Player
         public void SelectAction(ActionType action)
         {
             selectedAction = action;
+            UpdateHoverRadius();
             Debug.Log($"[PlayerController] Selected action: {action}");
         }
 
@@ -65,6 +74,7 @@ namespace SignalNoise.Player
         public void SetCharacter(CharacterData data)
         {
             characterData = data;
+            UpdateHoverRadius();
         }
 
         // ── UI Button Wrappers ────────────────────────────────────────────────────
@@ -81,11 +91,14 @@ namespace SignalNoise.Player
         private void HandlePlayerPhaseStart(int actionsLeft)
         {
             isPlayerTurn = true;
+            PlayerTurnActive = true;
+            UpdateHoverRadius();
         }
 
         private void HandleTurnResolved()
         {
             isPlayerTurn = false;
+            PlayerTurnActive = false;
         }
 
         private void HandleCellClicked(Vector2Int pos)
@@ -201,6 +214,25 @@ namespace SignalNoise.Player
         }
 
         // ── Utilities ─────────────────────────────────────────────────────────────
+
+        private void UpdateHoverRadius()
+        {
+            switch (selectedAction)
+            {
+                case ActionType.FilterZone:
+                    HoverRadius = filterZoneBaseRadius + (characterData != null ? characterData.filterRadiusBonus : 0);
+                    break;
+                case ActionType.AmplifySignal:
+                    HoverRadius = amplifyBaseRadius    + (characterData != null ? characterData.amplifyRadiusBonus : 0);
+                    break;
+                case ActionType.IsolateCell:
+                    HoverRadius = isolateBaseRadius;
+                    break;
+                case ActionType.RedirectFlow:
+                    HoverRadius = redirectBaseRadius;
+                    break;
+            }
+        }
 
         private void ForEachInRadius(Vector2Int center, int radius, System.Action<CellData> action)
         {
