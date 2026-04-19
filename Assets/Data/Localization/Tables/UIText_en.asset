@@ -34,6 +34,19 @@ MonoBehaviour:
     m_Localized: Moves other creatures around and amplifies their effects
     m_Metadata:
       m_Items: []
+  - m_Id: 27346426146816
+    m_Localized: 'Keys:
+
+      [1] Filter
+
+      [2] Amplify
+
+      [3] Block
+
+      [4]
+      Redirect'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
