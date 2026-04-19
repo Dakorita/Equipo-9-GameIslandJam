@@ -71,10 +71,10 @@ namespace SignalNoise.Entities
             cell.entityType = previousCell.entityType;
 
             // Partially blend stability toward the remembered state
-            cell.stability = Mathf.Lerp(cell.stability, previousCell.stability, 0.4f);
+            cell.stability = Mathf.Lerp(cell.stability, previousCell.stability, 0.6f);
 
             // Carry over some noise memory
-            cell.noiseLevel = Mathf.Lerp(cell.noiseLevel, previousCell.noiseLevel, 0.3f);
+            cell.noiseLevel = Mathf.Lerp(cell.noiseLevel, previousCell.noiseLevel, 0.2f);
         }
 
         // ── WatcherDaemon ───────────────────────────────────────────────────────

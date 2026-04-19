@@ -15,46 +15,24 @@ MonoBehaviour:
   useProceduralGeneration: 0
   manualPlacements:
   - position: {x: 0, y: 0}
-    type: 1
+    type: 0
   - position: {x: 0, y: 1}
-    type: 1
+    type: 5
   - position: {x: 0, y: 2}
-    type: 1
-  - position: {x: 0, y: 3}
-    type: 1
-  - position: {x: 1, y: 0}
-    type: 5
+    type: 0
   - position: {x: 1, y: 1}
-    type: 5
+    type: 0
   - position: {x: 1, y: 2}
-    type: 5
-  - position: {x: 1, y: 3}
-    type: 5
-  - position: {x: 2, y: 0}
     type: 1
+  - position: {x: 1, y: 3}
+    type: 0
+  - position: {x: 2, y: 0}
+    type: 0
   - position: {x: 2, y: 1}
     type: 1
   - position: {x: 2, y: 2}
     type: 1
-  - position: {x: 2, y: 3}
-    type: 1
-  - position: {x: 3, y: 0}
-    type: 3
-  - position: {x: 3, y: 1}
-    type: 3
-  - position: {x: 3, y: 2}
-    type: 2
-  - position: {x: 3, y: 3}
-    type: 2
-  - position: {x: 0, y: 4}
-    type: 3
-  - position: {x: 1, y: 4}
-    type: 3
-  - position: {x: 2, y: 4}
-    type: 3
-  - position: {x: 3, y: 4}
-    type: 3
   signalCount: 2
   noiseCount: 1
-  echoCount: 0
+  echoCount: 1
   seed: 0

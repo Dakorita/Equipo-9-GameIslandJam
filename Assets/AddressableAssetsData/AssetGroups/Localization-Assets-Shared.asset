@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: 8cb7f73c9193d404da30876fa30f34b9
   m_SerializeEntries:
+  - m_GUID: 00ffae4e865b90395b1ac604699b5ce8
+    m_Address: Assets/tuto3/Tuto3 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 059d02e9c9e0f5e43ad38a843cf4ff3b
     m_Address: Assets/Data/Localization/Tables/Tutorial1 Shared Data.asset
     m_ReadOnly: 1
@@ -22,6 +27,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c79e221200d629141831133cdd1dd261
     m_Address: Assets/Data/Localization/Tables/UIText Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e68b7e721fcbe26aa8b894ac6efe8878
+    m_Address: Assets/tuto2/Tuto2 Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
