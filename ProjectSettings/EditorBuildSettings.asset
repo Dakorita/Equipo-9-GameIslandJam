@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tuto_1.unity
     guid: 6265ed4343747759cb4ba57e36a51344
+  - enabled: 1
+    path: Assets/Scenes/Tuto_2.unity
+    guid: 5357ada6fe35a011e9d72c4201bd3692
+  - enabled: 1
+    path: Assets/Scenes/Tuto_3.unity
+    guid: 9cb1d19140f88ec4eb4bb2c5a332d9b2
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 7be267214c68ecf41a2b62b40a8d3cf6, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: c6165ab2a70ebc5498f2ddc037f05cf8, type: 2}

@@ -208,6 +208,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1390080919}
     - target: {fileID: 8314675388255060609, guid: ebc6e4243415551408bc54d56730c237, type: 3}
+      propertyPath: turnManager
+      value: 
+      objectReference: {fileID: 1875337167}
+    - target: {fileID: 8314675388255060609, guid: ebc6e4243415551408bc54d56730c237, type: 3}
+      propertyPath: nextSceneName
+      value: Lvl_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314675388255060609, guid: ebc6e4243415551408bc54d56730c237, type: 3}
       propertyPath: 'displays.Array.data[0]'
       value: 
       objectReference: {fileID: 1390080918}
@@ -352,6 +360,10 @@ PrefabInstance:
       value: GUID:00ffae4e865b90395b1ac604699b5ce8
       objectReference: {fileID: 0}
     - target: {fileID: 8880345776561965976, guid: ebc6e4243415551408bc54d56730c237, type: 3}
+      propertyPath: vnManager
+      value: 
+      objectReference: {fileID: 813108425}
+    - target: {fileID: 8880345776561965976, guid: ebc6e4243415551408bc54d56730c237, type: 3}
       propertyPath: levelConfig
       value: 
       objectReference: {fileID: 11400000, guid: 44be0816f6df746938e7a71afcb17fc2, type: 2}
@@ -466,6 +478,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 395428523074190270, guid: bc7e04a11436d5243a2e9ea03d04f9f2, type: 3}
   m_PrefabInstance: {fileID: 1390080916}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &813108425 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8314675388255060609, guid: ebc6e4243415551408bc54d56730c237, type: 3}
+  m_PrefabInstance: {fileID: 110205183}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4448f7a573a104348b91d796359337eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VNManager
 --- !u!1 &1224155971
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +732,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25702cf07d011ca4593146d6470cd37d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VNUIManager
+--- !u!1 &1875337167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5487040455315915244, guid: ebc6e4243415551408bc54d56730c237, type: 3}
+  m_PrefabInstance: {fileID: 110205183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
