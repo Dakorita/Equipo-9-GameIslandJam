@@ -577,6 +577,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25702cf07d011ca4593146d6470cd37d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VNUIManager
+--- !u!1 &1687578477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2733468834303352831, guid: bc7e04a11436d5243a2e9ea03d04f9f2, type: 3}
+  m_PrefabInstance: {fileID: 272023075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1751209164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -694,6 +699,10 @@ PrefabInstance:
       propertyPath: noiseWinThreshold
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8314675388255060609, guid: ebc6e4243415551408bc54d56730c237, type: 3}
+      propertyPath: decodify
+      value: 
+      objectReference: {fileID: 1687578477}
     - target: {fileID: 8314675388255060609, guid: ebc6e4243415551408bc54d56730c237, type: 3}
       propertyPath: uiManager
       value: 
